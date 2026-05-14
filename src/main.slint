@@ -1,0 +1,40 @@
+export component MainWindow inherits Window {
+    width: 800px;
+    height: 600px;
+    title: "Smart Home Display";
+
+    // Hintergrund
+    Rectangle {
+        background: #1a1a2e;
+    }
+
+    // Titel-Text
+    Text {
+        text: "🏠 Mein Smart Home";
+        font-size: 28px;
+        font-weight: 700;
+        color: #e0e0ff;
+        x: 32px;
+        y: 24px;
+    }
+
+    // Platzhalter für Module
+    Rectangle {
+        x: 32px;
+        y: 80px;
+        width: parent.width - 64px;
+        height: parent.height - 112px;
+        background: #16213e;
+        border-radius: 16px;
+
+        Text {
+            text: "Hier erscheinen die Module...";
+            font-size: 18px;
+            color: #555588;
+            horizontal-alignment: center;
+            vertical-alignment: center;
+            width: parent.width;
+            height: parent.height;
+        }
+    }
+}

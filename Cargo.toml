@@ -1,0 +1,10 @@
+[package]
+name = "smart_home_host"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+slint = { version = "1.9", features = ["backend-winit"] }
+
+[build-dependencies]
+slint-build = "1.9"
