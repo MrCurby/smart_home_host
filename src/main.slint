@@ -1,40 +1,30 @@
-export component MainWindow inherits Window {
+import { Button, VerticalBox } from "std-widgets.slint";
+export component MainWindow inherits Window {    
     width: 800px;
     height: 600px;
     title: "Smart Home Display";
 
-    // Hintergrund
-    Rectangle {
-        background: #1a1a2e;
-    }
+    in-out property<int> counter: 0;
+    callback button-pressed();
 
-    // Titel-Text
-    Text {
-        text: "🏠 Mein Smart Home";
-        font-size: 28px;
-        font-weight: 700;
-        color: #e0e0ff;
-        x: 32px;
-        y: 24px;
-    }
-
-    // Platzhalter für Module
-    Rectangle {
-        x: 32px;
-        y: 80px;
-        width: parent.width - 64px;
-        height: parent.height - 112px;
-        background: #16213e;
-        border-radius: 16px;
-
+    VerticalLayout {
+        // Titel-Text
         Text {
-            text: "Hier erscheinen die Module...";
-            font-size: 18px;
-            color: #555588;
+            text: "🏠 Mein Smart Home";
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        // Platzhalter für Module
+        Text {
+            text: "Counter: " + root.counter;
+            font-size: 24px;
             horizontal-alignment: center;
-            vertical-alignment: center;
-            width: parent.width;
-            height: parent.height;
+        }
+
+        Button {
+            text: "Counter erhöhen";
+            clicked => { root.button-pressed(); }
         }
     }
 }
